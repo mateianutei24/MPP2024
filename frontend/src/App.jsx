@@ -1,10 +1,18 @@
+import TableComponent from "./TableComponent";
+
 function App() {
   return (
-    <>
-      <div>
-        <h1>Main Page</h1>
-      </div>
-    </>
+    <div
+      style={{
+        backgroundColor: "#333",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <TableComponent />
+    </div>
   );
 }
 
