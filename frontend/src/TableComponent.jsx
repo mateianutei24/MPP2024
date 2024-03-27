@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from "uuid";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const initialData = [
+var initialData = [
   {
     id: "2f983882-7429-4f68-a6de-6ec394fa30f1",
     name: "Company 1",
@@ -178,7 +178,7 @@ function TableComponent() {
       };
 
       // Add new item to data array
-      setData([...data, newItem]);
+      setData([newItem, ...data]);
     } else {
       // Update existing item
       setData(data.map((item) => (item.id === formData.id ? formData : item)));
@@ -188,6 +188,13 @@ function TableComponent() {
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
+  };
+
+  const handleSort = () => {
+    const sortedData = [...data].sort(
+      (a, b) => a.numberOfEmployees - b.numberOfEmployees
+    );
+    setData(sortedData);
   };
 
   const columns = [
@@ -207,11 +214,13 @@ function TableComponent() {
         <div>
           <EditIcon
             color="primary"
+            title="editIcon"
             onClick={() => handleOpen(params.row)}
             style={{ marginRight: "8px", cursor: "pointer" }}
           />
           <DeleteIcon
             color="secondary"
+            title="deleteIcon"
             onClick={() => handleDelete(params.row.id)}
             style={{ cursor: "pointer" }}
           />
@@ -237,6 +246,16 @@ function TableComponent() {
       >
         Add Item
       </Button>
+
+      <Button
+        style={{ marginBottom: 8, marginLeft: 8 }}
+        variant="contained"
+        color="primary"
+        onClick={handleSort}
+      >
+        Sort items
+      </Button>
+
       <DataGrid
         rows={data}
         columns={columns}
@@ -257,7 +276,7 @@ function TableComponent() {
           <TextField
             autoFocus
             margin="dense"
-            label="Name"
+            label="Company Name"
             type="text"
             fullWidth
             name="name"
@@ -266,7 +285,7 @@ function TableComponent() {
           />
           <TextField
             margin="dense"
-            label="Address"
+            label="Company Address"
             type="text"
             fullWidth
             name="address"
@@ -275,7 +294,7 @@ function TableComponent() {
           />
           <TextField
             margin="dense"
-            label="Number of Employees"
+            label="Company Number of Employees"
             type="number"
             fullWidth
             name="numberOfEmployees"
