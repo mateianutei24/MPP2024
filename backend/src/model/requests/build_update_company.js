@@ -11,8 +11,8 @@ const buildUpdateCompanyRequest = (updateCompanyReqValidator) => {
     return {
       getId: () => id,
       getName: () => name,
-      address: () => address,
-      numberOfEmployees: () => numberOfEmployees,
+      getAddress: () => address,
+      getNumberOfEmployees: () => numberOfEmployees,
     };
   };
 };

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Company1",
+    "address": "Test Address 1",
+    "numberOfEmployees": 4,
+    "id": "08f226f8-e69f-4386-983c-41cd5a9edc29"
+  },
+  {
+    "name": "Company2",
+    "address": "Test Address2",
+    "numberOfEmployees": 4,
+    "id": "4f9dd0f8-e8b4-46a9-8a6b-27b56446a388"
+  },
+  {
+    "name": "Company3",
+    "address": "Test Address3",
+    "numberOfEmployees": 4,
+    "id": "1d5e8eb2-dae2-4674-9833-99fb66acd434"
+  },
+  {
+    "name": "Company4",
+    "address": "Test Address4",
+    "numberOfEmployees": 5,
+    "id": "08a0e51c-abf2-4b9f-a7d6-1d624e2fe090"
+  }
+]

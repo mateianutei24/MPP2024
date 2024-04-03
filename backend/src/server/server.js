@@ -14,10 +14,10 @@ module.exports = function server(useCases, model) {
 
   app.use((err, req, res, next) => {
     console.log(err);
-    res.status(err.status || 500);
+    res.status(err.code || 500);
     res.send({
       error: {
-        status: err.status || 500,
+        status: err.code || 500,
         message: err.message,
       },
     });

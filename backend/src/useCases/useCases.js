@@ -6,7 +6,7 @@ module.exports = function useCases(dataController) {
   const getAllCompanies = require("./company/getAllCompanies");
   const getCompany = require("./company/getCompany");
   const updateCompany = require("./company/updateCompany");
-
+  const sortAscByCompany = require("./company/sortAscByCompany");
   //puncte de lucru use cases imports
   return {
     // use cases pentru companii
@@ -20,7 +20,8 @@ module.exports = function useCases(dataController) {
       getCompany(dataController, requestObject),
     updateCompanyUseCase: (requestObject) =>
       updateCompany(dataController, requestObject),
-
+    sortAscByCompanyUseCase: (requestObject) =>
+      sortAscByCompany(dataController, requestObject),
     //use cases pentru puncte de lucru
   };
 };
