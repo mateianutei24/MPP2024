@@ -1,7 +1,6 @@
 const buildAddCompanyRequest = (addCompanyRequestValidator) => {
-  return ({ id, name, address, numberOfEmployees } = {}) => {
+  return ({ name, address, numberOfEmployees } = {}) => {
     let { error } = addCompanyRequestValidator({
-      id,
       name,
       address,
       numberOfEmployees,
@@ -9,10 +8,9 @@ const buildAddCompanyRequest = (addCompanyRequestValidator) => {
     if (error) throw new Error(error);
 
     return {
-      getId: () => id,
       getName: () => name,
-      address: () => address,
-      numberOfEmployees: () => numberOfEmployees,
+      getAddress: () => address,
+      getNumberOfEmployees: () => numberOfEmployees,
     };
   };
 };

@@ -19,11 +19,16 @@ module.exports = function dataController(database) {
     return database.getAllObjects();
   }
 
+  function sortAscByName() {
+    return database.sortAscByName();
+  }
+
   return {
     addObject,
     updateObject,
     deleteObject,
     getObject,
     getAllObjects,
+    sortAscByName,
   };
 };
